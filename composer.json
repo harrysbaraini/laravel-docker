@@ -1,5 +1,5 @@
 {
-  "name": "harrysbaraini/docker",
+  "name": "harrysbaraini/laravel-docker",
   "description": "Command to handle Docker containers with docker-compose.yml.",
   "type": "library",
   "license": "MIT",
