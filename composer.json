@@ -16,9 +16,9 @@
   },
   "extra": {
     "laravel": {
-      "providers": {
+      "providers": [
         "Harrysbaraini\\Docker\\DockerServiceProvider"
-      }
+      ]
     }
   },
   "minimum-stability": "dev",
