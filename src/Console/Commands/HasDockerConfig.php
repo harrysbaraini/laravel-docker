@@ -18,13 +18,13 @@ trait HasDockerConfig
      */
     protected function getContainers(): array
     {
-        $containers = explode(',', $this->argument('containers'));
+        $containers = $this->argument('containers');
 
         if (empty($containers)) {
             return config('docker.default_containers');
         }
 
-        return $containers;
+        return explode(',', $containers);
     }
 
     /**
