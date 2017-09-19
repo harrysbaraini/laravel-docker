@@ -23,18 +23,20 @@ class DockerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/docker.php' => config_path('docker.php'),
         ], 'docker');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                DockerBuild::class,
+                DockerList::class,
+                DockerStop::class,
+                DockerUp::class,
+            ]);
+        }
     }
 
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/docker.php', 'docker');
-
-        $this->commands([
-            DockerBuild::class,
-            DockerList::class,
-            DockerStop::class,
-            DockerUp::class,
-        ]);
     }
 
     public function provides()
