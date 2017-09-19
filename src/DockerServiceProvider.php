@@ -8,6 +8,10 @@
 
 namespace Harrysbaraini\Docker;
 
+use Harrysbaraini\Docker\Console\Commands\DockerBuild;
+use Harrysbaraini\Docker\Console\Commands\DockerList;
+use Harrysbaraini\Docker\Console\Commands\DockerStop;
+use Harrysbaraini\Docker\Console\Commands\DockerUp;
 use Illuminate\Support\ServiceProvider;
 
 class DockerServiceProvider extends ServiceProvider
@@ -25,11 +29,12 @@ class DockerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/docker.php', 'docker');
 
-        $this->app->singleton('docker', function () {
-            //
-        });
-
-        $this->commands(['docker']);
+        $this->commands([
+            DockerBuild::class,
+            DockerList::class,
+            DockerStop::class,
+            DockerUp::class,
+        ]);
     }
 
     public function provides()
