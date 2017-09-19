@@ -1,26 +1,29 @@
 {
-    "name": "harrysbaraini/docker",
-    "description": "Command to handle Docker containers with docker-compose.yml.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Vanderlei Sbaraini Amancio",
-            "email": "harrysbaraini@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Harrysbaraini\\Docker\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": {
-                "Harrysbaraini\\Docker\\DockerServiceProvider"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "harrysbaraini/docker",
+  "description": "Command to handle Docker containers with docker-compose.yml.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vanderlei Sbaraini Amancio",
+      "email": "harrysbaraini@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Harrysbaraini\\Docker\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": {
+        "Harrysbaraini\\Docker\\DockerServiceProvider"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0.0",
+    "laravel/framework": "5.5.*"
+  }
 }
