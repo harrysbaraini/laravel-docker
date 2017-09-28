@@ -13,7 +13,7 @@ class DockerUp extends Command
      *
      * @var string
      */
-    protected $signature = 'docker:up {containers?}';
+    protected $signature = 'docker:up {container?* : One or more container names}';
 
     /**
      * The console command description.

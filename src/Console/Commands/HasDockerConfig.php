@@ -8,23 +8,20 @@
 
 namespace Harrysbaraini\Docker\Console\Commands;
 
-
 trait HasDockerConfig
-
-
 {
     /**
      * @return array
      */
     protected function getContainers(): array
     {
-        $containers = $this->argument('containers');
+        $containers = $this->argument('container');
 
         if (empty($containers)) {
             return config('docker.default_containers');
         }
 
-        return explode(',', $containers);
+        return $containers;
     }
 
     /**

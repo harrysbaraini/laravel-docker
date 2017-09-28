@@ -13,7 +13,7 @@ class DockerBuild extends Command
      *
      * @var string
      */
-    protected $signature = 'docker:build {containers?}';
+    protected $signature = 'docker:build {container?* : One or more container names}';
 
     /**
      * The console command description.

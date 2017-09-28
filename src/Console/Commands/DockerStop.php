@@ -13,14 +13,14 @@ class DockerStop extends Command
      *
      * @var string
      */
-    protected $signature = 'docker:stop {containers?}';
+    protected $signature = 'docker:stop {container?* : One or more container names}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Stop docker containers.';
+    protected $description = 'Stop docker containers';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,7 @@ class DockerStop extends Command
     {
         $containers = $this->getContainers();
 
-        $output = shell_exec('cd ' . base_path('docker') . ' && docker-compose stop ' . implode(',', $containers));
+        $output = shell_exec('cd ' . base_path('docker') . ' && docker-compose stop ' . implode(' ', $containers));
 
         $this->comment($output);
     }
