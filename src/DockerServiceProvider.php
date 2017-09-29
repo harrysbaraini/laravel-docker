@@ -28,12 +28,12 @@ class DockerServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
+		DockerBash::class,
                 DockerBuild::class,
                 DockerList::class,
                 DockerStop::class,
                 DockerUp::class,
                 DockerRemove::class,
-		DockerBash::class,
             ]);
         }
     }
