@@ -13,6 +13,7 @@ use Harrysbaraini\Docker\Console\Commands\DockerList;
 use Harrysbaraini\Docker\Console\Commands\DockerStop;
 use Harrysbaraini\Docker\Console\Commands\DockerUp;
 use Harrysbaraini\Docker\Console\Commands\DockerRemove;
+use Harrysbaraini\Docker\Console\Commands\DockerBash;
 use Illuminate\Support\ServiceProvider;
 
 class DockerServiceProvider extends ServiceProvider
@@ -32,6 +33,7 @@ class DockerServiceProvider extends ServiceProvider
                 DockerStop::class,
                 DockerUp::class,
                 DockerRemove::class,
+		DockerBash::class,
             ]);
         }
     }
