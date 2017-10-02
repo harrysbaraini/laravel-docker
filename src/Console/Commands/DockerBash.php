@@ -41,7 +41,7 @@ class DockerBash extends Command
     {
         $containers = $this->getContainers();
 
-        $output = shell_exec('cd ' . base_path('docker') . ' && docker-compose exec ' . implode(' ', $containers)) . ' bash';
+        $output = passthru('cd ' . base_path('docker') . ' && docker-compose exec ' . implode(' ', $containers)) . ' bash';
 
         $this->comment($output);
     }
